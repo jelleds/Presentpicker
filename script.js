@@ -4,6 +4,8 @@ $(document).ready(function(){
     var arr1=["Jelle", "Verbeken", "Lindsay", "Yenthe", "Delphine"];
     var arr2=["Jelle", "Verbeken", "Lindsay", "Yenthe", "Delphine"];
 
+   
+
     $("#unicorn").on("click", function(){
        
         var random1=arr1[Math.floor(Math.random() * arr1.length)];
@@ -17,65 +19,27 @@ $(document).ready(function(){
         console.log("Persoon 2: " + random2);
         console.log("index2: " + index2);
 
-        
-         if(random1===random2){   
-             
+        for(var i in arr1){
+
+            if(random1===random2){   
+                 
                 arr1.splice(index1,0);
                 console.log(arr1);
                 arr2.splice(index2,0);
                 console.log(arr2);
-             
-             
-            
+                                 
             }else{
-                
-                if (random1==="Yenthe" || random2 ==="Yenthe"){
-            
+                if(random1===arr1[i] || random2===arr2[i]){
                     arr1.splice(index1,1);
                     console.log(arr1);
                     arr2.splice(index2,1);
                     console.log(arr2);
-
-                }else if (random1==="Jelle" || random2 ==="Jelle"){
-                
-                        arr1.splice(index1,1);
-                        console.log(arr1);
-                        arr2.splice(index2,1);
-                        console.log(arr2);
-
-                }else if (random1==="Delphine" || random2 ==="Delphine"){
-
-                        arr1.splice(index1,1);
-                        console.log(arr1);
-                        arr2.splice(index2,1);
-                        console.log(arr2);
-
-                }else if (random1==="Verbeken" || random2 ==="Verbeken"){ 
-
-                        arr1.splice(index1,1);
-                        console.log(arr1);
-                        arr2.splice(index2,1);
-                        console.log(arr2);
-
-                }else if (random1==="Lindsay" || random2 ==="Verbeken"){
-
-                        arr1.splice(index1,1);
-                        console.log(arr1);
-                        arr2.splice(index2,1);
-                        console.log(arr2);
-
                 }
 
-            if(arr1.length==0 || arr2.length==0){
-                    console.log("De lijst is leeg");
-                    arr1=[];
-                    arr2=[];
-            }
+            }//end for loop
 
 
-                
-
-            } //End of Else statement
+        } //End of Else statement
         
         
     });//End of On Click function

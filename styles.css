@@ -1,3 +1,11 @@
+.container{
+	width: 50%;
+	margin: 0 auto;
+}
+
 #unicorn{
+	text-align: center;
+}
+#unicorn img{
     width: 50%;
 }
