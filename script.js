@@ -21,7 +21,7 @@ $(document).ready(function(){
         var persoon2=document.getElementById("persoon2");
         //de lijst van mensen
         var array1 = document.getElementById("array1");
-        var players = document.getElementById("players");  
+        var players = document.getElementById("players"); 
 
     //Begin of FOR loop
         for(var i in arr1){
@@ -35,17 +35,23 @@ $(document).ready(function(){
                 if(random1===arr1[i] || random2===arr2[i]){
                     arr1.splice(index1,1);
                     arr2.splice(index2,1);
+                    console.log((arr1.length)+1);
                 }
             }
 
         } //End of FOR loop
+        
 
     //Printing the random names on the screen
         persoon1.innerHTML=random1;
         persoon2.innerHTML=random2;
 
+    if(arr1.length===0 || arr2.length===0){
+        persoon1.innerHTML="De lijst is leeg";
+        persoon2.innerHTML="";
+    }
         
-    });//End of On Click function
+    });//End of OnClick function
 
     //printing the players on the screen
         for(var i in arr1){
