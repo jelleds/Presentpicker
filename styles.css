@@ -1,11 +1,42 @@
 .container{
-	width: 50%;
+
+	width: 100%;
 	margin: 0 auto;
+	padding-top: 30px;
+	padding: 30px;
+}
+.sidepanel{
+
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 20px;
+
+}
+.sidepanel h1{
+	text-align: center;
+}
+.sidepanel h2{
+	text-align: left;
 }
 
 #unicorn{
 	text-align: center;
+
+	width: 70%;
+	display: inline-block;
 }
 #unicorn img{
     width: 50%;
+}
+.personen{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.col2{
+	width: 40%;
+	position:relative;
+	display: inline;
+	text-align: center;
 }
