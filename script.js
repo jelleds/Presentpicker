@@ -4,6 +4,7 @@ $(document).ready(function(){
  //de 2 arrays bepalen
     var arr1=["Jelle", "Verbeken", "Lindsay", "Yenthe", "Delphine"];
     var arr2=["Jelle", "Verbeken", "Lindsay", "Yenthe", "Delphine"];
+    var arr3=[];
 
 
     $("#unicorn").on("click", function(){
@@ -20,10 +21,11 @@ $(document).ready(function(){
         var persoon2=document.getElementById("persoon2");
         //de lijst van mensen
         var array1 = document.getElementById("array1");
-        var players = document.getElementById("players"); 
+        var players = document.getElementById("players");
+        //nieuwe speler
+        var newPlayer;
+        var delPlayer;
 
-
-    //functions
         function EmptyTheList(){
             //Begin of FOR loop
                 for(var i in arr1){
@@ -50,10 +52,7 @@ $(document).ready(function(){
             if(arr1.length===0 || arr2.length===0){
                 persoon1.innerHTML="De lijst is leeg";
                 persoon2.innerHTML="";
-            }
-        };
-
-
+            }};
     
         EmptyTheList();     
 
@@ -62,14 +61,34 @@ $(document).ready(function(){
         
     });//End of OnClick function
 
+
  function PrintingPlayerList(){
             for(var i in arr1){
                     players.innerHTML+="<h4>"+ arr1[i] + "</h4>";
-                }
-        };
+                }};
     
    //printing the players on the screen
     PrintingPlayerList();
+
+
+function addPlayer(){
+        //nieuwe speler
+        newPlayer = document.getElementById("addPlayerInput").value;
+        console.log(newPlayer);
+        arr3.push(newPlayer);}
+
+function deletePlayer(){
+
+}
+
+$("#addPlayerButton").on("click",function(){
+    
+    addPlayer();  
+    console.log(arr3);
+  
+});
+   
+
 
 
 
