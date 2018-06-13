@@ -1,11 +1,10 @@
 
 $(document).ready(function(){
-   
-   //de 2 arrays bepalen
+
+ //de 2 arrays bepalen
     var arr1=["Jelle", "Verbeken", "Lindsay", "Yenthe", "Delphine"];
     var arr2=["Jelle", "Verbeken", "Lindsay", "Yenthe", "Delphine"];
 
-   
 
     $("#unicorn").on("click", function(){
     
@@ -23,41 +22,64 @@ $(document).ready(function(){
         var array1 = document.getElementById("array1");
         var players = document.getElementById("players"); 
 
-    //Begin of FOR loop
-        for(var i in arr1){
 
-            if(random1===random2){   
-                 
-                arr1.splice(index1,0);
-                arr2.splice(index2,0);
-                                 
-            }else{
-                if(random1===arr1[i] || random2===arr2[i]){
-                    arr1.splice(index1,1);
-                    arr2.splice(index2,1);
-                    console.log((arr1.length)+1);
-                }
+    //functions
+        function EmptyTheList(){
+            //Begin of FOR loop
+                for(var i in arr1){
+
+                    if(random1===random2){   
+                         
+                        arr1.splice(index1,0);
+                        arr2.splice(index2,0);
+                                         
+                    }else{
+                        if(random1===arr1[i] || random2===arr2[i]){
+                            arr1.splice(index1,1);
+                            arr2.splice(index2,1);
+                        }
+                    }
+
+                } //End of FOR loop
+        }
+        function PrintingPlayers(){
+            //Printing the random names on the screen
+                persoon1.innerHTML=random1;
+                persoon2.innerHTML=random2;
+
+            if(arr1.length===0 || arr2.length===0){
+                persoon1.innerHTML="De lijst is leeg";
+                persoon2.innerHTML="";
             }
+        };
 
-        } //End of FOR loop
-        
 
-    //Printing the random names on the screen
-        persoon1.innerHTML=random1;
-        persoon2.innerHTML=random2;
+    
+        EmptyTheList();     
 
-    if(arr1.length===0 || arr2.length===0){
-        persoon1.innerHTML="De lijst is leeg";
-        persoon2.innerHTML="";
-    }
+        PrintingPlayers();
+
         
     });//End of OnClick function
 
-    //printing the players on the screen
-        for(var i in arr1){
-            console.log(arr1[i]);
-            players.innerHTML+="<h4>"+ arr1[i] + "</h4>";
-        }
-   
+ function PrintingPlayerList(){
+            for(var i in arr1){
+                    players.innerHTML+="<h4>"+ arr1[i] + "</h4>";
+                }
+        };
+    
+   //printing the players on the screen
+    PrintingPlayerList();
+
+
 
 });//End of ready function 
+
+
+
+
+
+
+
+
+
